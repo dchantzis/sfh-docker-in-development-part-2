@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+if [ $# -gt 0 ]; then
+
+    if [ "$1" == "start" ]; then
+        docker-compose up -d
+
+    elif [ "$1" == "stop" ]; then
+        docker-compose down
+
+    elif [ "$1" == "artisan" ] || [ "$1" == "art" ]; then
+        # shift 1 to get all the parameters except the first with "$@" further down
+        shift 1
+        docker-composer exec \
+            app \
+            php artisan "$@"
+
+    elsif [ "$1" == "composer" ] || [ "$1" == "comp" ]; then
+        # shift 1 to get all the parameters except the first with "$@" further down
+        shift 1
+        docker-compose exec \
+            app \
+            composer "$@"
+
+    elsif [ "$1" == "test" ]; then
+        shift 1
+        docker-compose exec \
+            app \
+            ./vendor/bin/phpunit "$@"
+
+    elsif [ "$1" == "npm" ]; then
+        shift 1
+        docker-compose rum --rm \
+            node \
+            npm "$@"
+
+    elsif [ "$1" == "npm" ]; then
+        shift 1
+        docker-compose run --rm \
+            node \
+            yarn "$@"
+
+    elsif [ "$1" == "gulp" ]; then
+        shift 1
+        docker-compose run --rm \
+            node \
+            ./node_modules/.bin/gulp "$@"
+    else
+        docker-compose "$@"
+    fi
+
+else
+    docker-compose ps
+fi
