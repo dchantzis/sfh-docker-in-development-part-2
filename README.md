@@ -8,15 +8,15 @@ Source: https://serversforhackers.com/s/docker-in-dev-v2-ii
 We continue the Docker in Dev course by using Docker Compose and building a development workflow. The first course can be found [here](https://github.com/dchantzis/sfh-docker-in-development-part-1)
 
 ## Table of Contents
-1. [Docker Compose Intro]()
-2. [Docker Compose Services]()
-3. [Compose and Volumes]()
-4. [Our App Service]()
-5. [The Working Directory]()
-6. [Variables in Docker Compose]()
-7. [Adding a NodeJS Service]()
-8. [Dev Workflow Intro]()
-9. [The Workflow]()
+1. [Docker Compose Intro](#01-docker-compose-intro)
+2. [Docker Compose Services](#02-docker-compose-services)
+3. [Compose and Volumes](#03-compose-and-volumes)
+4. [Our App Service](#04-our-app-service)
+5. [The Working Directory](#05-the-working-directory)
+6. [Variables in Docker Compose](#06-variables-in-docker-compose)
+7. [Adding a NodeJS Service](#07-adding-a-nodejs-service)
+8. [Dev Workflow Intro](#08-dev-workflow-intro)
+9. [The Workflow](#09-the-workflow)
 
 ---
 
